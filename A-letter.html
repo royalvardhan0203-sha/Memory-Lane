@@ -1,0 +1,672 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>A Letter From My Heart | Our Story</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600&family=Cormorant+Garamond:wght@400;500;600;700&family=Great+Vibes&display=swap" rel="stylesheet">
+
+<style>
+:root {
+    --bg: #100d10;
+    --gold: #c9a477;
+    --rose: #bd858c;
+    --text: #f4e9e5;
+    --muted: #b6a5a2;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    min-height: 100vh;
+    background:
+        radial-gradient(ellipse at 50% 0%, #382027 0%, transparent 55%),
+        linear-gradient(145deg, #100d10, #171015);
+    color: var(--text);
+    font-family: 'DM Sans', sans-serif;
+    overflow-x: hidden;
+}
+
+body::before {
+    content: "";
+    position: fixed;
+    inset: 0;
+    pointer-events: none;
+    opacity: .12;
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 180 180' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='.3'/%3E%3C/svg%3E");
+}
+
+.container {
+    position: relative;
+    z-index: 1;
+    width: min(850px, 94%);
+    margin: auto;
+    padding: 50px 0 55px;
+}
+
+.header {
+    text-align: center;
+    margin-bottom: 35px;
+}
+
+.eyebrow {
+    color: var(--gold);
+    font-size: 11px;
+    letter-spacing: 4px;
+    text-transform: uppercase;
+    margin-bottom: 14px;
+}
+
+h1 {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: clamp(36px, 6vw, 55px);
+    font-weight: 500;
+}
+
+h1 span {
+    color: var(--rose);
+    font-family: 'Great Vibes', cursive;
+    font-size: 1.2em;
+}
+
+.subtitle {
+    color: var(--muted);
+    font-size: 13px;
+    margin-top: 12px;
+    letter-spacing: 1px;
+}
+
+.rule {
+    width: 65px;
+    height: 1px;
+    background: var(--gold);
+    margin: 23px auto 0;
+    opacity: .7;
+}
+
+/* BOOK */
+
+.book-area {
+    display: flex;
+    justify-content: center;
+    perspective: 1800px;
+}
+
+.paper {
+    position: relative;
+    width: 100%;
+    max-width: 680px;
+    height: 790px;
+    padding: 0;
+    overflow: hidden;
+    transform-style: preserve-3d;
+
+    background:
+        radial-gradient(ellipse at 7% 8%, rgba(255,255,255,.65), transparent 35%),
+        radial-gradient(ellipse at 95% 15%, rgba(131,85,49,.17), transparent 32%),
+        radial-gradient(ellipse at 12% 92%, rgba(151,111,69,.19), transparent 38%),
+        radial-gradient(ellipse at 90% 88%, rgba(128,87,52,.13), transparent 35%),
+        linear-gradient(120deg, #ead9ba, #f0e3cb 38%, #e6d4b6 75%, #efdfc4);
+
+    border: 1px solid rgba(139,103,67,.6);
+
+    box-shadow:
+        0 25px 65px rgba(0,0,0,.55),
+        inset 0 0 35px rgba(110,75,44,.15),
+        inset 0 0 5px rgba(93,60,35,.35);
+}
+
+/* Old paper marks */
+
+.paper::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+    z-index: 3;
+
+    background:
+        linear-gradient(90deg, rgba(91,62,39,.13), transparent 7%, transparent 94%, rgba(91,62,39,.12)),
+        linear-gradient(180deg, rgba(92,62,38,.10), transparent 8%, transparent 92%, rgba(92,62,38,.15)),
+        url("data:image/svg+xml,%3Csvg viewBox='0 0 180 180' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.8' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='.35'/%3E%3C/svg%3E");
+
+    opacity: .55;
+}
+
+/* Slightly worn corners */
+
+.paper::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+    z-index: 4;
+
+    background:
+        radial-gradient(ellipse at 0% 0%, rgba(110,70,39,.22), transparent 13%),
+        radial-gradient(ellipse at 100% 0%, rgba(110,70,39,.17), transparent 12%),
+        radial-gradient(ellipse at 0% 100%, rgba(110,70,39,.20), transparent 13%),
+        radial-gradient(ellipse at 100% 100%, rgba(110,70,39,.20), transparent 13%);
+}
+
+.paper-content {
+    position: absolute;
+    top: 52px;
+    left: 65px;
+    right: 65px;
+    bottom: 85px;
+
+    z-index: 2;
+    overflow: hidden;
+
+    color: #49372e;
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 19px;
+    line-height: 1.58;
+    font-weight: 500;
+}
+
+.paper-content p {
+    margin-bottom: 15px;
+}
+
+.letter-greeting {
+    font-family: 'Great Vibes', cursive;
+    font-size: 38px;
+    color: #80534b;
+    margin-bottom: 18px !important;
+}
+
+.letter-date {
+    font-family: 'DM Sans', sans-serif;
+    font-size: 10px;
+    letter-spacing: 2px;
+    color: #8c7160;
+    text-transform: uppercase;
+    margin-bottom: 24px !important;
+}
+
+.emphasis {
+    font-weight: 700;
+    color: #80534b;
+    font-size: 21px;
+}
+
+.poem-title {
+    text-align: center;
+    font-style: italic;
+    color: #80534b;
+    margin-top: 20px;
+}
+
+.poetry {
+    text-align: center;
+    font-size: 22px;
+    font-weight: 600;
+    line-height: 1.8;
+    color: #714c43;
+    margin: 25px 0;
+}
+
+.poet {
+    text-align: right;
+    font-family: 'DM Sans', sans-serif;
+    font-size: 12px;
+    color: #92725c;
+}
+
+.meaning {
+    font-size: 16px;
+    font-style: italic;
+    color: #806b5c;
+    text-align: center;
+    margin-top: 20px;
+}
+
+.letter-signature {
+    font-family: 'Great Vibes', cursive;
+    font-size: 36px;
+    color: #80534b;
+    text-align: right;
+    margin-top: 28px;
+}
+
+/* SWIPE LABEL */
+
+.page-footer {
+    position: absolute;
+    z-index: 5;
+    bottom: 24px;
+    left: 0;
+    width: 100%;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 12px;
+
+    color: #8c6d59;
+    font-size: 10px;
+    font-family: 'DM Sans', sans-serif;
+    letter-spacing: 3px;
+    cursor: pointer;
+}
+
+.page-footer span {
+    font-size: 19px;
+    animation: nudge 1.5s infinite;
+}
+
+@keyframes nudge {
+    0%,100% { transform: translateX(0); }
+    50% { transform: translateX(6px); }
+}
+
+/* PAGE FLIP */
+
+.flip-sheet {
+    position: absolute;
+    inset: 0;
+    z-index: 10;
+    pointer-events: none;
+
+    background:
+        radial-gradient(ellipse at 7% 8%, rgba(255,255,255,.65), transparent 35%),
+        radial-gradient(ellipse at 95% 15%, rgba(131,85,49,.17), transparent 32%),
+        linear-gradient(120deg, #ead9ba, #f0e3cb 38%, #e6d4b6 75%, #efdfc4);
+
+    transform-origin: left center;
+    transform: rotateY(0deg);
+    opacity: 0;
+    backface-visibility: hidden;
+}
+
+.flip-sheet.flipping {
+    opacity: 1;
+    animation: pageTurn .65s ease-in-out forwards;
+}
+
+.flip-sheet.reverse {
+    transform-origin: right center;
+    animation-name: pageTurnBack;
+}
+
+@keyframes pageTurn {
+    0% {
+        transform: rotateY(0deg);
+        box-shadow: 0 0 0 rgba(0,0,0,0);
+    }
+    45% {
+        box-shadow: -25px 0 35px rgba(0,0,0,.22);
+    }
+    100% {
+        transform: rotateY(-180deg);
+        box-shadow: -25px 0 35px rgba(0,0,0,.22);
+    }
+}
+
+@keyframes pageTurnBack {
+    0% {
+        transform: rotateY(0deg);
+    }
+    45% {
+        box-shadow: 25px 0 35px rgba(0,0,0,.22);
+    }
+    100% {
+        transform: rotateY(180deg);
+        box-shadow: 25px 0 35px rgba(0,0,0,.22);
+    }
+}
+
+/* NAVIGATION */
+
+.navigation {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 25px;
+    margin-top: 28px;
+}
+
+.nav-btn {
+    border: 1px solid rgba(201,164,119,.55);
+    background: rgba(255,255,255,.025);
+    color: var(--gold);
+    padding: 11px 22px;
+    border-radius: 30px;
+    font-family: 'DM Sans', sans-serif;
+    font-size: 12px;
+    letter-spacing: 1px;
+    cursor: pointer;
+    transition: .3s;
+}
+
+.nav-btn:hover {
+    background: rgba(201,164,119,.12);
+}
+
+.nav-btn:disabled {
+    opacity: .25;
+    cursor: default;
+}
+
+.page-count {
+    color: var(--muted);
+    font-size: 12px;
+}
+
+.back-link {
+    display: block;
+    text-align: center;
+    margin-top: 38px;
+    color: var(--muted);
+    text-decoration: none;
+    font-size: 12px;
+    letter-spacing: 1px;
+}
+
+.back-link:hover {
+    color: var(--gold);
+}
+
+/* MOBILE */
+
+@media(max-width: 600px) {
+    .container {
+        padding: 35px 0 45px;
+    }
+
+    .paper {
+        height: 760px;
+    }
+
+    .paper-content {
+        top: 38px;
+        left: 27px;
+        right: 27px;
+        bottom: 78px;
+        font-size: 16px;
+        line-height: 1.58;
+    }
+
+    .letter-greeting {
+        font-size: 34px;
+    }
+
+    .poetry {
+        font-size: 18px;
+    }
+
+    .meaning {
+        font-size: 14px;
+    }
+
+    .navigation {
+        gap: 12px;
+    }
+
+    .nav-btn {
+        padding: 10px 15px;
+    }
+}
+
+@media(prefers-reduced-motion: reduce) {
+    *, *::before, *::after {
+        animation-duration: .01ms !important;
+        transition-duration: .01ms !important;
+    }
+}
+</style>
+</head>
+
+<body>
+
+<div class="container">
+
+<header class="header">
+    <div class="eyebrow">A letter from my heart</div>
+    <h1>For my <span>Jaana 💕</span></h1>
+    <p class="subtitle">Some feelings are too precious to leave unsaid.</p>
+    <div class="rule"></div>
+</header>
+
+<main class="book-area">
+
+    <article class="paper" id="paper">
+        <div class="paper-content" id="paperContent"></div>
+
+        <div class="page-footer" id="pageFooter">
+            SWIPE <span>→</span>
+        </div>
+
+        <div class="flip-sheet" id="flipSheet"></div>
+    </article>
+
+</main>
+
+<div class="navigation">
+    <button class="nav-btn" id="prevBtn" type="button">← Previous</button>
+    <div class="page-count" id="pageCount">1 / 1</div>
+    <button class="nav-btn" id="nextBtn" type="button">Next →</button>
+</div>
+
+<a href="CH%205.html" class="back-link">← Back to Our Memories</a>
+
+</div>
+
+<script>
+const letter = [
+    {type:"greeting", text:"Jaana 💕"},
+    {type:"date", text:"13 November 2026"},
+
+    {text:"Pata nahi ye letter kaise shuru karun. Bahut kuch hai jo kehna chahta hoon, bahut si baatein hain jo shayad kabhi theek se keh hi nahi paaya. Aur kuch aisi bhi hain jinhe kehne mein shayad maine bahut der kar di."},
+
+    {text:"Sabse pehle, I'm sorry. I'm genuinely sorry for everything I did, knowingly or unknowingly, jiski wajah se aapko kabhi dukh hua, aapko kabhi laga ki aapki feelings ki kadar nahi hui, ya aapko meri wajah se akela mehsoos hua. Kaash main waqt ko thoda peeche le ja sakta. Kaash us waqt kuch cheezein alag tarah se samajh paata, kuch baatein kehne ke bajaye sun paata aur kuch situations mein apni ego se zyada aapko importance de paata."},
+
+    {text:"Kabhi-kabhi sochta hoon ki agar us waqt sab kuch itna galat na hua hota, toh shayad aaj hum saath hote. Shayad aaj bhi humare paas ek dusre ko batane ke liye din bhar ki chhoti-chhoti baatein hoti. Shayad hum ab bhi waise hi haste, ladte, ek dusre ko manate aur apni chhoti si duniya mein khush rehte."},
+
+    {text:"Main ye nahi kahunga ki galti sirf meri thi ya sirf aapki. Hum dono se galtiyan hui hongi. Lekin mere liye ab ye hisaab rakhna maayne nahi rakhta ki kaun kitna sahi tha aur kaun kitna galat. Mere liye woh insaan maayne rakhta hai jo kabhi meri zindagi ka itna khoobsurat hissa tha. Aapki jagah mere liye kabhi kisi argument, kisi galti ya kisi bure waqt se chhoti nahi ho sakti."},
+
+    {text:"Mujhe aaj bhi humari shuruaat yaad aati hai. Woh pehli baatein, woh dheere-dheere ek dusre ke kareeb aana, woh chhoti-chhoti cheezein jinse pata hi nahi chala ki kab aap meri aadat ban gayi. Phir woh waqt aaya jab aap sirf meri khushi ka hissa nahi, balki meri har chhoti-badi baat ka hissa ban gayi. Aapke saath guzare hue pal shayad us waqt aam lagte the, lekin aaj samajh aata hai ki wahi pal kitne khaas the."},
+
+    {text:"Aaj bhi kabhi koi purani baat yaad aa jaati hai toh chehre par muskurahat aa jaati hai, aur agle hi pal dil mein ek ajeeb sa dard reh jaata hai. Bahut si cheezein hain jo aaj bhi aapse kehne ka mann karta hai. Kabhi koi achhi baat hoti hai toh sabse pehle aapko batane ka mann karta hai. Kabhi kuch bura hota hai toh lagta hai kaash aap hoti aur main bina kuch soche aapse sab keh paata."},
+
+    {type:"emphasis", text:"I miss you. Bahut zyada."},
+
+    {text:"Pata nahi zindagi itni ajeeb kyun ho gayi hai. Kuch waqt ke liye khushi aati hai, lagta hai sab theek ho raha hai, lekin phir na jaane kyun wahi udaasi laut aati hai. Kabhi-kabhi toh jitni khushi mehsoos hoti hai, usse kai guna zyada khaali-pan mehsoos hone lagta hai. Main ye nahi keh raha ki meri har pareshani ki wajah aap hain ya meri khushi ki zimmedari aapki hai. Bas itna keh raha hoon ki aapki kami mehsoos hoti hai. Aur shayad jitna main pehle samajh paaya tha, aaj usse kahin zyada samajhta hoon ki aap mere liye kitni maayne rakhti hain."},
+
+    {text:"Main nahi jaanta ki aapke dil mein aaj mere liye kya hai. Shayad bahut si shikayatein hain, shayad kuch baatein hain jo abhi bhi takleef deti hain, aur shayad aapne apne mann mein bahut kuch peeche chhod diya hai. Main aapse ye umeed nahi karta ki aap ek letter padhkar sab kuch bhool jaayengi. Main bas chahta hoon ki aap ek baar meri baat mere dil ki taraf se bhi samajhne ki koshish karein."},
+
+    {text:"Meri khwahish aaj bhi wahi hai. Main chahta hoon ki humare beech jo kuch bhi galat hua, kabhi use samajhne aur sudhaarne ka ek mauka mile. Main chahta hoon ki hum ek baar phir ek dusre ke ho sakein, utne hi nahi jitne pehle the, balki agar mumkin ho toh usse bhi zyada gehraai se. Is baar sirf waade nahi, balki samajh, waqt, izzat, bharosa aur har din ki chhoti-chhoti koshishon ke saath."},
+
+    {text:"Main perfect hone ka daawa nahi karta. Lekin agar kabhi aap mujhe ek mauka dena chahein, toh main sirf purana Vardhan bankar nahi, balki apni galtiyon ko samajhkar ek behtar insaan bankar aana chahta hoon."},
+
+    {text:"Aur haan, agar aap ijazat dein, toh main phir se woh chhoti-chhoti baatein jeena chahta hoon. Aapko apne din ke baare mein batana, aapki baatein sunna, bina kisi wajah ke hasna, kabhi roothna aur phir ek dusre ko manana. Main kisi perfect kahaani ki umeed nahi karta. Bas ek aisi kahaani chahta hoon jismein hum dono ek dusre ko samajhne ki koshish karte rahein."},
+
+    {text:"Aaj, 13 November 2026 ko, main ye letter likhte hue nahi jaanta ki kal kya hoga. Main ye bhi nahi jaanta ki kabhi humari kahaani ko ek naya panna milega ya nahi. Lekin itna zaroor jaanta hoon ki jo kuch bhi humne saath jiya, woh mere liye kabhi be-maayne nahi hoga."},
+
+    {text:"Aap meri zindagi ki ek aisi yaad nahi hain jise main bas bhoolkar aage badh jaun. Aap woh insaan hain jinke saath maine apni zindagi ke kuch sabse khoobsurat pal jiye hain. Aur aaj bhi dil ke kisi kone mein ek chhoti si khwahish hai ki kaash humare beech sab theek ho jaaye."},
+
+    {text:"Agar kabhi aapka dil kahe, toh ek baar phir baat karna. Koi jaldi nahi, koi zabardasti nahi. Main bas itna chahta hoon ki meri taraf se jo baatein adhoori reh gayi thi, woh aaj aap tak pahunch jaayein."},
+
+    {type:"emphasis", text:"I miss you, Jaana. More than these words could ever explain."},
+
+    {type:"poem-title", text:"A few words by Mirza Ghalib..."},
+
+    {type:"poetry", text:"ये न थी हमारी क़िस्मत कि विसाल-ए-यार होता,<br>अगर और जीते रहते, यही इंतज़ार होता।"},
+
+    {type:"poet", text:"— मिर्ज़ा ग़ालिब"},
+
+    {type:"meaning", text:"शायद अपने महबूब से मिलना, उसके साथ ज़िंदगी बिताना हमारी क़िस्मत में नहीं था। अगर ज़िंदगी और भी लंबी होती, तो शायद उसके लौटने की उम्मीद में इंतज़ार ही करते रहते।"},
+
+    {type:"closing", text:"Yours,<br>Jaana 💕"}
+];
+
+const paperContent = document.getElementById("paperContent");
+const pageCount = document.getElementById("pageCount");
+const prevBtn = document.getElementById("prevBtn");
+const nextBtn = document.getElementById("nextBtn");
+const footer = document.getElementById("pageFooter");
+const flipSheet = document.getElementById("flipSheet");
+
+let pages = [];
+let currentPage = 0;
+let busy = false;
+let startX = 0;
+
+function makeElement(item) {
+    const p = document.createElement("p");
+    p.innerHTML = item.text;
+
+    if (item.type === "greeting") p.className = "letter-greeting";
+    if (item.type === "date") p.className = "letter-date";
+    if (item.type === "emphasis") p.className = "emphasis";
+    if (item.type === "poem-title") p.className = "poem-title";
+    if (item.type === "poetry") p.className = "poetry";
+    if (item.type === "poet") p.className = "poet";
+    if (item.type === "meaning") p.className = "meaning";
+    if (item.type === "closing") p.className = "letter-signature";
+
+    return p;
+}
+
+function buildPages() {
+    pages = [];
+
+    const probe = document.createElement("div");
+    probe.style.cssText = `
+        position:absolute;
+        visibility:hidden;
+        top:52px;
+        left:65px;
+        right:65px;
+        width:auto;
+        height:auto;
+        font-family:'Cormorant Garamond',serif;
+        font-size:19px;
+        line-height:1.58;
+        font-weight:500;
+    `;
+
+    document.getElementById("paper").appendChild(probe);
+
+    const mobile = window.innerWidth <= 600;
+
+    probe.style.top = mobile ? "38px" : "52px";
+    probe.style.left = mobile ? "27px" : "65px";
+    probe.style.right = mobile ? "27px" : "65px";
+    probe.style.fontSize = mobile ? "16px" : "19px";
+
+    const maxHeight = document.getElementById("paper").clientHeight -
+                      (mobile ? 116 : 137);
+
+    let currentItems = [];
+
+    letter.forEach(item => {
+        const element = makeElement(item);
+        probe.appendChild(element);
+
+        if (probe.scrollHeight > maxHeight && currentItems.length > 0) {
+            probe.removeChild(element);
+            pages.push(currentItems);
+            currentItems = [item];
+            probe.innerHTML = "";
+            probe.appendChild(makeElement(item));
+        } else {
+            currentItems.push(item);
+        }
+    });
+
+    if (currentItems.length) pages.push(currentItems);
+
+    probe.remove();
+    currentPage = Math.min(currentPage, pages.length - 1);
+    renderPage();
+}
+
+function renderPage() {
+    paperContent.innerHTML = "";
+
+    pages[currentPage].forEach(item => {
+        paperContent.appendChild(makeElement(item));
+    });
+
+    pageCount.textContent = `${currentPage + 1} / ${pages.length}`;
+
+    prevBtn.disabled = currentPage === 0;
+    nextBtn.disabled = currentPage === pages.length - 1;
+
+    footer.style.display =
+        currentPage === pages.length - 1 ? "none" : "flex";
+}
+
+function turnPage(direction) {
+    if (busy) return;
+
+    const target = currentPage + direction;
+
+    if (target < 0 || target >= pages.length) return;
+
+    busy = true;
+
+    flipSheet.classList.remove("reverse", "flipping");
+    void flipSheet.offsetWidth;
+
+    if (direction < 0) {
+        flipSheet.classList.add("reverse");
+    }
+
+    flipSheet.classList.add("flipping");
+
+    setTimeout(() => {
+        currentPage = target;
+        renderPage();
+    }, 320);
+
+    setTimeout(() => {
+        flipSheet.classList.remove("flipping", "reverse");
+        busy = false;
+    }, 680);
+}
+
+prevBtn.addEventListener("click", () => turnPage(-1));
+nextBtn.addEventListener("click", () => turnPage(1));
+footer.addEventListener("click", () => turnPage(1));
+
+document.getElementById("paper").addEventListener("touchstart", e => {
+    startX = e.changedTouches[0].screenX;
+}, {passive:true});
+
+document.getElementById("paper").addEventListener("touchend", e => {
+    const endX = e.changedTouches[0].screenX;
+    const distance = startX - endX;
+
+    if (Math.abs(distance) > 55) {
+        turnPage(distance > 0 ? 1 : -1);
+    }
+}, {passive:true});
+
+document.addEventListener("keydown", e => {
+    if (e.key === "ArrowRight") turnPage(1);
+    if (e.key === "ArrowLeft") turnPage(-1);
+});
+
+window.addEventListener("load", buildPages);
+
+let resizeTimer;
+window.addEventListener("resize", () => {
+    clearTimeout(resizeTimer);
+    resizeTimer = setTimeout(buildPages, 300);
+});
+</script>
+
+</body>
+</html>
