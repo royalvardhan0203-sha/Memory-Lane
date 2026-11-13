@@ -1,0 +1,625 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Our Little World | Our Story</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=DM+Sans:wght@300;400;500&family=Great+Vibes&display=swap" rel="stylesheet">
+
+<style>
+
+:root {
+    --bg: #100d10;
+    --text: #f4e9e5;
+    --muted: #b6a5a2;
+    --gold: #c9a477;
+    --rose: #bd858c;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    min-height: 100vh;
+    background:
+        radial-gradient(ellipse at 50% 0%, #382027 0%, transparent 55%),
+        linear-gradient(180deg, #100d10, #171015 55%, #100d10);
+
+    color: var(--text);
+    font-family: 'DM Sans', sans-serif;
+    overflow-x: hidden;
+}
+
+body::before {
+    content: "";
+    position: fixed;
+    inset: 0;
+    pointer-events: none;
+    opacity: 0.12;
+
+    background-image:
+        url("data:image/svg+xml,%3Csvg viewBox='0 0 180 180' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='.3'/%3E%3C/svg%3E");
+
+    z-index: 10;
+}
+
+/* Navigation */
+
+nav {
+    width: 100%;
+    padding: 28px 7%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.back-link {
+    color: var(--muted);
+    text-decoration: none;
+    font-size: 12px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    transition: 0.3s;
+}
+
+.back-link:hover {
+    color: var(--gold);
+}
+
+.page-label {
+    color: var(--gold);
+    font-size: 11px;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+}
+
+/* Main section */
+
+.container {
+    width: min(850px, 88%);
+    margin: auto;
+    padding: 90px 0 100px;
+    text-align: center;
+}
+
+.eyebrow {
+    color: var(--gold);
+    font-size: 11px;
+    letter-spacing: 4px;
+    text-transform: uppercase;
+    margin-bottom: 25px;
+}
+
+.butterfly {
+    display: block;
+    font-size: 25px;
+    margin-bottom: 30px;
+    animation: float 4s ease-in-out infinite;
+}
+
+@keyframes float {
+    0%, 100% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(-9px);
+    }
+}
+
+h1 {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: clamp(45px, 8vw, 76px);
+    font-weight: 400;
+    line-height: 1.1;
+    margin-bottom: 12px;
+}
+
+h1 span {
+    display: block;
+    color: var(--rose);
+    font-family: 'Great Vibes', cursive;
+    font-size: clamp(55px, 10vw, 92px);
+    margin-top: 5px;
+}
+
+.rule {
+    width: 65px;
+    height: 1px;
+    background: var(--gold);
+    margin: 35px auto;
+}
+
+.intro {
+    max-width: 610px;
+    margin: auto;
+    color: var(--muted);
+    font-size: 15px;
+    line-height: 2.1;
+    font-weight: 300;
+}
+
+/* Story cards */
+
+.story-card {
+    margin: 85px auto 0;
+    padding: 42px 45px;
+    max-width: 680px;
+
+    background: linear-gradient(
+        135deg,
+        rgba(255,255,255,0.035),
+        rgba(255,255,255,0.008)
+    );
+
+    border: 1px solid rgba(201,164,119,0.19);
+    border-radius: 3px;
+    text-align: left;
+    position: relative;
+}
+
+.story-card::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 2px;
+    height: 100%;
+    background: linear-gradient(
+        transparent,
+        var(--gold),
+        transparent
+    );
+}
+
+.date {
+    color: var(--gold);
+    font-size: 10px;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    margin-bottom: 20px;
+}
+
+.story-card h2 {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 34px;
+    font-weight: 500;
+    margin-bottom: 20px;
+}
+
+.story-card p {
+    color: var(--muted);
+    font-size: 14px;
+    line-height: 2.1;
+    font-weight: 300;
+    margin-bottom: 15px;
+}
+
+.story-card p:last-child {
+    margin-bottom: 0;
+}
+
+/* Special memory */
+
+.memory-quote {
+    margin: 28px 0;
+    padding: 24px 28px;
+    border-left: 1px solid var(--rose);
+    background: rgba(189,133,140,0.055);
+}
+
+.memory-quote p {
+    color: #e5c9c5;
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 23px;
+    line-height: 1.6;
+    font-style: italic;
+    margin-bottom: 0;
+}
+
+.highlight {
+    color: var(--rose);
+    font-style: italic;
+}
+
+/* Closing quote */
+
+.quote {
+    margin: 90px auto 0;
+    max-width: 600px;
+    font-family: 'Cormorant Garamond', serif;
+    font-size: clamp(25px, 4vw, 36px);
+    line-height: 1.5;
+    color: #e5c9c5;
+    font-style: italic;
+}
+
+.quote span {
+    display: block;
+    margin-top: 18px;
+    font-family: 'DM Sans', sans-serif;
+    font-size: 10px;
+    letter-spacing: 3px;
+    color: var(--gold);
+    font-style: normal;
+    text-transform: uppercase;
+}
+
+/* Navigation button */
+
+.next-section {
+    margin-top: 75px;
+}
+
+.next-link {
+    display: inline-block;
+    padding: 16px 30px;
+    border: 1px solid rgba(201,164,119,0.5);
+    color: var(--gold);
+    text-decoration: none;
+    font-size: 11px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    transition: 0.35s;
+}
+
+.next-link:hover {
+    background: var(--gold);
+    color: #171015;
+    transform: translateY(-3px);
+}
+
+footer {
+    text-align: center;
+    padding: 30px 15px 35px;
+    color: #806d70;
+    font-size: 11px;
+    letter-spacing: 1.5px;
+}
+
+/* Responsive */
+
+@media(max-width: 600px) {
+
+    nav {
+        padding: 22px 6%;
+    }
+
+    .container {
+        padding-top: 65px;
+    }
+
+    .story-card {
+        padding: 30px 25px;
+        margin-top: 65px;
+    }
+
+    .story-card h2 {
+        font-size: 29px;
+    }
+
+    .story-card p {
+        font-size: 13px;
+    }
+
+    .intro {
+        font-size: 14px;
+    }
+
+    .memory-quote {
+        padding: 20px;
+    }
+
+    .memory-quote p {
+        font-size: 21px;
+    }
+}
+
+@media(prefers-reduced-motion: reduce) {
+    *,
+    *::before,
+    *::after {
+        animation: none !important;
+        scroll-behavior: auto !important;
+        transition: none !important;
+    }
+}
+
+</style>
+</head>
+
+<body>
+
+<nav>
+
+    <a href="the-beginning.html" class="back-link">
+        ← Previous chapter
+    </a>
+
+    <div class="page-label">
+        Chapter 03
+    </div>
+
+</nav>
+
+
+<main class="container">
+
+    <div class="eyebrow">
+        The little moments that meant everything
+    </div>
+
+    <span class="butterfly">🦋</span>
+
+    <h1>
+        Our little
+        <span>world...</span>
+    </h1>
+
+    <div class="rule"></div>
+
+    <p class="intro">
+        Dheere-dheere humari life mein kuch aise moments
+        aane lage jo shayad us waqt bahut normal lagte the.
+
+        Saath breakfast karna, ek-doosre ke saath waqt bitana,
+        chhoti-chhoti shararatein...
+
+        Aur pta hi nahi chala kab ye sab humari favourite
+        memories ban gayi.
+    </p>
+
+
+    <!-- Card 1 -->
+
+    <section class="story-card">
+
+        <div class="date">
+            GNA University · Our Everyday Moments
+        </div>
+
+        <h2>
+            Breakfast was never just breakfast.
+        </h2>
+
+        <p>
+            Yaad hai jab aap breakfast ke liye merko call
+            kiya karti thi? Aur mai tab tak ready bhi nahi
+            hua hota tha.
+        </p>
+
+        <p>
+            Aapka call aata tha aur fir jaldi-jaldi ready
+            hokar breakfast ke liye aana padta tha.
+        </p>
+
+        <p>
+            Girls ka boys hostel mess mein aana bhi apne
+            aap mein ek alag hi scene hua karta tha.
+        </p>
+
+        <p>
+            Aur sabse cute baat toh tab hoti thi jab aap
+            meri plate se khana lene lagti thi.
+        </p>
+
+        <div class="memory-quote">
+
+            <p>
+                "Apki plate se khana zyada tasty lg rha hai."
+            </p>
+
+        </div>
+
+        <p>
+            Pta nahi aapko yaad hai ya nahi, lekin mujhe
+            aaj bhi ye chhoti-chhoti baatein yaad hain.
+        </p>
+
+    </section>
+
+
+    <!-- Card 2 -->
+
+    <section class="story-card">
+
+        <div class="date">
+            B Block · 5th Floor
+        </div>
+
+        <h2>
+            A place that became special.
+        </h2>
+
+        <p>
+            University mein meri favourite jagah B Block
+            ki fifth floor thi.
+        </p>
+
+        <p>
+            Yaad hai ek Saturday ko hum pehli baar wahan
+            ek classroom mein akele mile the?
+        </p>
+
+        <p>
+            Weekend par university mein classes nahi hoti thi,
+            lekin us din hum wahan aaye the.
+        </p>
+
+        <p>
+            Shayad kisi aur ke liye woh bas ek normal
+            classroom hoga, lekin mere liye us jagah ki
+            apni ek alag importance hai.
+        </p>
+
+    </section>
+
+
+    <!-- Card 3 -->
+
+    <section class="story-card">
+
+        <div class="date">
+            Our Little Habits
+        </div>
+
+        <h2>
+            The comfort of being together.
+        </h2>
+
+        <p>
+            Mujhe sabse zyada yaad woh moments aate hain
+            jab mai aapki god mein so jaata tha aur jab
+            aankhein khulti thi toh sabse pehle aapka face
+            dikhta tha.
+        </p>
+
+        <p>
+            Aapko sona kitna pasand tha, aur mere saamne
+            aap bilkul ek chhote bachche ki tarah behave
+            karti thi.
+        </p>
+
+        <p>
+            Mai apne haath se khana bhi nahi khata tha.
+            Aap mujhe apne haath se khilaya karti thi.
+        </p>
+
+        <p>
+            Aur chokha... woh bhi maine pehli baar
+            aapke haath se hi khaya tha.
+        </p>
+
+        <p>
+            Ye sab sunne mein chhoti baatein lag sakti hain,
+            lekin mere liye inki value kabhi chhoti nahi thi.
+        </p>
+
+    </section>
+
+
+    <!-- Card 4 -->
+
+    <section class="story-card">
+
+        <div class="date">
+            Satnampura · Phagwara
+        </div>
+
+        <h2>
+            A home of our own little memories.
+        </h2>
+
+        <p>
+            Hostel mein ek semester saath rehne ke baad
+            hum hostel se bahar shift ho gaye the.
+        </p>
+
+        <p>
+            Shubham, jise hum Birju bulate the, woh bhi
+            humare saath boys hostel mein rehta tha.
+        </p>
+
+        <p>
+            Hostel se shift hone ke lagbhag teen mahine baad
+            hum Satnampura, Phagwara mein saath rehne lage the.
+        </p>
+
+        <p>
+            Wahan ki midnight cooking, raat ko saath mein
+            kuch banana aur chhoti-chhoti baaton par hasna...
+            woh sab apne aap mein ek alag hi duniya thi.
+        </p>
+
+        <p>
+            Shayad wahi woh waqt tha jab normal daily life
+            bhi kisi khoobsurat memory jaisi lagne lagi thi.
+        </p>
+
+    </section>
+
+
+    <!-- Card 5 -->
+
+    <section class="story-card">
+
+        <div class="date">
+            The Little Things I Remember
+        </div>
+
+        <h2>
+            All the things that made you, you.
+        </h2>
+
+        <p>
+            Aapko dancing kitni pasand thi.
+            Jab bhi dance ki baat hoti thi, aapka excitement
+            alag hi hota tha.
+        </p>
+
+        <p>
+            Aur paneer... aap toh paneer chaar din lagataar
+            bhi kha sakti thi.
+        </p>
+
+        <p>
+            Mai aapko Jaana, Jaan aur Dumbo bulata tha.
+            Har naam ke peeche apni ek alag si feeling thi.
+        </p>
+
+        <p>
+            Aaj jab in sab baaton ko yaad karta hoon,
+            toh realise hota hai ki kisi insaan ko special
+            banane ke liye hamesha bade moments ki zaroorat
+            nahi hoti.
+        </p>
+
+        <p>
+            Kabhi-kabhi uski chhoti-chhoti aadatein hi
+            sabse zyada yaad reh jaati hain.
+        </p>
+
+    </section>
+
+
+    <div class="quote">
+
+        "Shayad humari duniya bahut badi nahi thi,
+        lekin us chhoti si duniya mein
+        bahut saari khoobsurat yaadein thi."
+
+        <span>— Our little world</span>
+
+    </div>
+
+
+    <div class="next-section">
+
+        <a href="our-memories.html" class="next-link">
+            Explore our memories →
+        </a>
+
+    </div>
+
+</main>
+
+
+<footer>
+    Made with love, for Jaana ♡
+</footer>
+
+
+</body>
+</html>

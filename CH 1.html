@@ -1,0 +1,458 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>How It All Began | Our Story</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=DM+Sans:wght@300;400;500&family=Great+Vibes&display=swap" rel="stylesheet">
+
+<style>
+
+:root {
+    --bg: #100d10;
+    --text: #f4e9e5;
+    --muted: #b6a5a2;
+    --gold: #c9a477;
+    --rose: #bd858c;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    min-height: 100vh;
+    background:
+        radial-gradient(ellipse at 50% 0%, #382027 0%, transparent 55%),
+        linear-gradient(180deg, #100d10, #171015 55%, #100d10);
+
+    color: var(--text);
+    font-family: 'DM Sans', sans-serif;
+    overflow-x: hidden;
+}
+
+/* Background effects */
+
+body::before {
+    content: "";
+    position: fixed;
+    inset: 0;
+    pointer-events: none;
+    opacity: 0.12;
+
+    background-image:
+        url("data:image/svg+xml,%3Csvg viewBox='0 0 180 180' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='.3'/%3E%3C/svg%3E");
+
+    z-index: 10;
+}
+
+/* Navigation */
+
+nav {
+    width: 100%;
+    padding: 28px 7%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.back-link {
+    color: var(--muted);
+    text-decoration: none;
+    font-size: 12px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    transition: 0.3s;
+}
+
+.back-link:hover {
+    color: var(--gold);
+}
+
+.page-label {
+    color: var(--gold);
+    font-size: 11px;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+}
+
+/* Main section */
+
+.container {
+    width: min(850px, 88%);
+    margin: auto;
+    padding: 90px 0 100px;
+    text-align: center;
+}
+
+.eyebrow {
+    color: var(--gold);
+    font-size: 11px;
+    letter-spacing: 4px;
+    text-transform: uppercase;
+    margin-bottom: 25px;
+}
+
+.butterfly {
+    display: block;
+    font-size: 25px;
+    margin-bottom: 30px;
+    animation: float 4s ease-in-out infinite;
+}
+
+@keyframes float {
+    0%, 100% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(-9px);
+    }
+}
+
+h1 {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: clamp(45px, 8vw, 76px);
+    font-weight: 400;
+    line-height: 1.1;
+    margin-bottom: 12px;
+}
+
+h1 span {
+    display: block;
+    color: var(--rose);
+    font-family: 'Great Vibes', cursive;
+    font-size: clamp(55px, 10vw, 92px);
+    margin-top: 5px;
+}
+
+.rule {
+    width: 65px;
+    height: 1px;
+    background: var(--gold);
+    margin: 35px auto;
+}
+
+.intro {
+    max-width: 610px;
+    margin: auto;
+    color: var(--muted);
+    font-size: 15px;
+    line-height: 2.1;
+    font-weight: 300;
+}
+
+/* Story card */
+
+.story-card {
+    margin: 85px auto 0;
+    padding: 42px 45px;
+    max-width: 680px;
+
+    background: linear-gradient(
+        135deg,
+        rgba(255,255,255,0.035),
+        rgba(255,255,255,0.008)
+    );
+
+    border: 1px solid rgba(201,164,119,0.19);
+    border-radius: 3px;
+    text-align: left;
+    position: relative;
+}
+
+.story-card::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 2px;
+    height: 100%;
+    background: linear-gradient(
+        transparent,
+        var(--gold),
+        transparent
+    );
+}
+
+.date {
+    color: var(--gold);
+    font-size: 10px;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    margin-bottom: 20px;
+}
+
+.story-card h2 {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 34px;
+    font-weight: 500;
+    margin-bottom: 20px;
+}
+
+.story-card p {
+    color: var(--muted);
+    font-size: 14px;
+    line-height: 2.1;
+    font-weight: 300;
+    margin-bottom: 15px;
+}
+
+.story-card p:last-child {
+    margin-bottom: 0;
+}
+
+.highlight {
+    color: var(--rose);
+    font-style: italic;
+}
+
+/* Closing quote */
+
+.quote {
+    margin: 90px auto 0;
+    max-width: 600px;
+    font-family: 'Cormorant Garamond', serif;
+    font-size: clamp(25px, 4vw, 36px);
+    line-height: 1.5;
+    color: #e5c9c5;
+    font-style: italic;
+}
+
+.quote span {
+    display: block;
+    margin-top: 18px;
+    font-family: 'DM Sans', sans-serif;
+    font-size: 10px;
+    letter-spacing: 3px;
+    color: var(--gold);
+    font-style: normal;
+    text-transform: uppercase;
+}
+
+/* Navigation button */
+
+.next-section {
+    margin-top: 75px;
+}
+
+.next-link {
+    display: inline-block;
+    padding: 16px 30px;
+    border: 1px solid rgba(201,164,119,0.5);
+    color: var(--gold);
+    text-decoration: none;
+    font-size: 11px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    transition: 0.35s;
+}
+
+.next-link:hover {
+    background: var(--gold);
+    color: #171015;
+    transform: translateY(-3px);
+}
+
+footer {
+    text-align: center;
+    padding: 30px 15px 35px;
+    color: #806d70;
+    font-size: 11px;
+    letter-spacing: 1.5px;
+}
+
+/* Responsive */
+
+@media(max-width: 600px) {
+
+    nav {
+        padding: 22px 6%;
+    }
+
+    .container {
+        padding-top: 65px;
+    }
+
+    .story-card {
+        padding: 30px 25px;
+        margin-top: 65px;
+    }
+
+    .story-card h2 {
+        font-size: 29px;
+    }
+
+    .story-card p {
+        font-size: 13px;
+    }
+
+    .intro {
+        font-size: 14px;
+    }
+}
+
+@media(prefers-reduced-motion: reduce) {
+    *,
+    *::before,
+    *::after {
+        animation: none !important;
+        scroll-behavior: auto !important;
+        transition: none !important;
+    }
+}
+
+</style>
+</head>
+
+<body>
+
+<nav>
+
+    <a href="index.html" class="back-link">
+        ← Back home
+    </a>
+
+    <div class="page-label">
+        Chapter 01
+    </div>
+
+</nav>
+
+
+<main class="container">
+
+    <div class="eyebrow">
+        Every story has a beginning
+    </div>
+
+    <span class="butterfly">🦋</span>
+
+    <h1>
+        How it all
+        <span>began...</span>
+    </h1>
+
+    <div class="rule"></div>
+
+    <p class="intro">
+        Humein tab kahan pta tha ki university ka ek
+        normal sa din humari kahani ki shuruaat ban jayega.
+
+        Na koi plan tha, na kuch socha tha.
+
+        Bas sab kuch apne aap ho gaya.
+    </p>
+
+
+    <section class="story-card">
+
+        <div class="date">
+            GNA University · 2021
+        </div>
+
+        <h2>
+            A simple hello. An unexpected beginning.
+        </h2>
+
+        <p>
+            Yaad hai jab hum pehli baar mile the?
+            University ki classes, corridors aur roz ke
+            normal se dinon ke beech humari mulaqat hui thi.
+        </p>
+
+        <p>
+            Aap merse ek number maangne aayi thi,
+            aur bas wahi ek chhoti si baat humari
+            conversations ki wajah ban gayi.
+            Tab hum dono ko kahan pta tha ki ye baatein
+            humein kahan tak le jayengi.
+        </p>
+
+        <p>
+            Dheere-dheere humari baatein badhne lagi.
+            University ke baad jab aap apne hostel chali
+            jaati thi, toh mai aapko call karta tha.
+            Fir pta hi nahi chalta tha ki kitni der tak
+            baat karte rehte the hum.
+        </p>
+
+        <p>
+            Pta nahi kya baat thi un conversations mein,
+            lekin aapse baat karke ek normal sa din bhi
+            thoda khaas lagne lagta tha.
+        </p>
+
+    </section>
+
+
+    <section class="story-card">
+
+        <div class="date">
+            A little pause
+        </div>
+
+        <h2>
+            Even silence couldn't end it.
+        </h2>
+
+        <p>
+            Aur fir jab sab kuch thoda familiar hone laga tha,
+            ek din maine achanak aapse baat karna band kar diya
+            aur Chandigarh chala gaya.
+        </p>
+
+        <p>
+            Zindagi apni tarah chalti rahi, din beet te gaye.
+            Fir March 2022 mein ek din aapka call aaya.
+            Aapki tabiyat kharab thi aur aapne merko call kiya tha.
+        </p>
+
+        <p>
+            Shayad us waqt hum dono ko bhi andaza nahi tha
+            ki humari kahani mein abhi kitna kuch baaki tha.
+        </p>
+
+    </section>
+
+
+    <div class="quote">
+
+        "Kabhi-kabhi shuruaat itni normal hoti hai,
+        ki us waqt ehsaas hi nahi hota
+        ki woh kitni khaas banne wali hai."
+
+        <span>— A little piece of us</span>
+
+    </div>
+
+
+    <div class="next-section">
+
+        <a href="the-beginning.html" class="next-link">
+            Continue our story →
+        </a>
+
+    </div>
+
+</main>
+
+
+<footer>
+    Made with love, for Jaana ♡
+</footer>
+
+
+</body>
+</html>

@@ -1,0 +1,493 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Our Memories | A Little World of Us</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=DM+Sans:wght@300;400;500&family=Great+Vibes&display=swap" rel="stylesheet">
+
+<style>
+:root {
+    --bg: #100d10;
+    --text: #f4e9e5;
+    --muted: #b6a5a2;
+    --gold: #c9a477;
+    --rose: #bd858c;
+    --card: rgba(255,255,255,0.035);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    min-height: 100vh;
+    background:
+        radial-gradient(circle at 50% 15%, rgba(111,49,67,0.19), transparent 42%),
+        linear-gradient(145deg, #100d10, #1b1018 55%, #100d10);
+    color: var(--text);
+    font-family: 'DM Sans', sans-serif;
+    overflow-x: hidden;
+}
+
+body::before {
+    content: "";
+    position: fixed;
+    inset: 0;
+    pointer-events: none;
+    opacity: 0.13;
+    z-index: 0;
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 180 180' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='.3'/%3E%3C/svg%3E");
+}
+
+nav {
+    position: relative;
+    z-index: 2;
+    max-width: 1100px;
+    margin: auto;
+    padding: 28px 24px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+nav a {
+    color: var(--muted);
+    text-decoration: none;
+    font-size: 12px;
+    letter-spacing: 1px;
+    transition: color .3s;
+}
+
+nav a:hover {
+    color: var(--gold);
+}
+
+.chapter {
+    color: var(--gold);
+    letter-spacing: 3px;
+    font-size: 10px;
+    text-transform: uppercase;
+}
+
+.container {
+    position: relative;
+    z-index: 1;
+    max-width: 1050px;
+    margin: auto;
+    padding: 65px 24px 90px;
+}
+
+header {
+    text-align: center;
+    margin-bottom: 55px;
+}
+
+.eyebrow {
+    color: var(--gold);
+    font-size: 11px;
+    letter-spacing: 4px;
+    text-transform: uppercase;
+    margin-bottom: 23px;
+}
+
+.butterfly {
+    display: block;
+    font-size: 24px;
+    margin-bottom: 14px;
+    animation: float 4s ease-in-out infinite;
+}
+
+h1 {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: clamp(54px, 9vw, 90px);
+    line-height: .95;
+    font-weight: 400;
+}
+
+h1 span {
+    display: block;
+    color: var(--rose);
+    font-style: italic;
+}
+
+.rule {
+    width: 65px;
+    height: 1px;
+    background: var(--gold);
+    margin: 30px auto;
+    opacity: .8;
+}
+
+.intro {
+    max-width: 610px;
+    margin: auto;
+    color: var(--muted);
+    font-size: 14px;
+    line-height: 2;
+    font-weight: 300;
+}
+
+.drive-button {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    margin-top: 30px;
+    padding: 15px 27px;
+    border: 1px solid rgba(201,164,119,.55);
+    border-radius: 40px;
+    color: var(--gold);
+    text-decoration: none;
+    font-size: 11px;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    transition: .3s;
+}
+
+.drive-button:hover {
+    background: var(--gold);
+    color: #171014;
+    transform: translateY(-3px);
+    box-shadow: 0 8px 30px rgba(201,164,119,.15);
+}
+
+.section-heading {
+    text-align: center;
+    margin: 65px 0 30px;
+}
+
+.section-heading h2 {
+    font-family: 'Cormorant Garamond', serif;
+    font-weight: 400;
+    font-size: 37px;
+}
+
+.section-heading p {
+    color: var(--muted);
+    font-size: 12px;
+    margin-top: 9px;
+    letter-spacing: .5px;
+}
+
+.gallery {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 19px;
+}
+
+.memory-card {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    min-height: 210px;
+    padding: 23px;
+    overflow: hidden;
+    text-decoration: none;
+    color: var(--text);
+    border: 1px solid rgba(201,164,119,.17);
+    border-radius: 5px;
+    background:
+        radial-gradient(circle at 80% 10%, rgba(189,133,140,.17), transparent 55%),
+        linear-gradient(145deg, rgba(255,255,255,.055), rgba(255,255,255,.012));
+    transition: transform .35s, border-color .35s, background .35s;
+}
+
+.memory-card::before {
+    content: "";
+    position: absolute;
+    width: 150px;
+    height: 150px;
+    border: 1px solid rgba(201,164,119,.10);
+    border-radius: 50%;
+    right: -65px;
+    bottom: -75px;
+    transition: transform .5s;
+}
+
+.memory-card:hover {
+    transform: translateY(-6px);
+    border-color: rgba(201,164,119,.6);
+    background:
+        radial-gradient(circle at 80% 10%, rgba(189,133,140,.24), transparent 55%),
+        linear-gradient(145deg, rgba(255,255,255,.075), rgba(255,255,255,.02));
+}
+
+.memory-card:hover::before {
+    transform: scale(1.5);
+}
+
+.card-top,
+.card-bottom {
+    position: relative;
+    z-index: 1;
+}
+
+.card-number {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 38px;
+    color: rgba(201,164,119,.65);
+}
+
+.card-icon {
+    font-size: 25px;
+    margin-top: 15px;
+}
+
+.card-bottom {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 10px;
+}
+
+.card-title {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 22px;
+}
+
+.card-type {
+    color: var(--gold);
+    font-size: 9px;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    white-space: nowrap;
+}
+
+.open-icon {
+    color: var(--rose);
+    font-size: 18px;
+    margin-left: 8px;
+}
+
+.note {
+    max-width: 600px;
+    text-align: center;
+    margin: 55px auto 0;
+    color: var(--muted);
+    font-size: 12px;
+    line-height: 2;
+}
+
+.closing {
+    text-align: center;
+    margin: 75px auto 30px;
+    max-width: 650px;
+}
+
+.closing p {
+    font-family: 'Great Vibes', cursive;
+    color: var(--rose);
+    font-size: clamp(30px, 5vw, 43px);
+    line-height: 1.5;
+}
+
+footer {
+    text-align: center;
+    padding: 30px 20px 45px;
+    color: var(--muted);
+    font-size: 11px;
+    letter-spacing: 1px;
+}
+
+@keyframes float {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-9px); }
+}
+
+@media(max-width: 700px) {
+    .gallery {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 12px;
+    }
+
+    .memory-card {
+        min-height: 175px;
+        padding: 16px;
+    }
+
+    .card-number {
+        font-size: 30px;
+    }
+
+    .card-title {
+        font-size: 19px;
+    }
+
+    .card-type {
+        font-size: 8px;
+    }
+
+    .container {
+        padding-top: 45px;
+    }
+}
+
+@media(max-width: 390px) {
+    .gallery {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media(prefers-reduced-motion: reduce) {
+    *, *::before, *::after {
+        animation: none !important;
+        transition: none !important;
+        scroll-behavior: auto !important;
+    }
+}
+</style>
+</head>
+
+<body>
+
+<nav>
+    <a href="two-years.html">← Previous Chapter</a>
+    <span class="chapter">Our Memories</span>
+</nav>
+
+<main class="container">
+
+<header>
+    <div class="eyebrow">A collection of moments</div>
+
+    <span class="butterfly">🦋</span>
+
+    <h1>
+        Our little
+        <span>memories...</span>
+    </h1>
+
+    <div class="rule"></div>
+
+    <p class="intro">
+        Kuch yaadein photos mein hoti hain, kuch videos mein,
+        aur kuch bas dil mein reh jaati hain.
+        Yahan woh moments hain jinhe main dobara dekhna chahta hoon,
+        kabhi bhi, kahin bhi.
+    </p>
+
+    <a
+        class="drive-button"
+        href="https://drive.google.com/drive/folders/1Uysjkq_hng-h9wOcTQvq1jDGH3fNCJ0v?usp=sharing"
+        target="_blank"
+        rel="noopener noreferrer"
+    >
+        ↗ Memory Lane
+    </a>
+</header>
+
+<div class="section-heading">
+    <h2>A little piece of us</h2>
+    <p>Open any memory to relive that moment.</p>
+</div>
+
+<section class="gallery" id="gallery"></section>
+
+<div class="note">
+    Every memory has its own little story.
+    Click on a card to open the original photo or video.
+</div>
+
+<div class="closing">
+    <p>
+        Some moments pass.<br>
+        Some moments stay forever.
+    </p>
+</div>
+
+</main>
+
+<footer>
+    Made with love, for Jaana ♡
+</footer>
+
+<script>
+const memories = [
+    { id: "1CzU9QCBe6CVu5wqB_EUtE60Zsl_DelN7", type: "Video" },
+    { id: "1ghjUQM197Z0g6nAe1l6hITGcJ_e30NWe", type: "Video" },
+    { id: "1DQg3evBOzHD2xzjE1vPn1AEcJ-Jv5X6a", type: "Video" },
+    { id: "1HMDMDlIT5h88DxZ34nhjzEjQYIDQNm8q", type: "Photo" },
+    { id: "1GwR1zsP4e99-Mm3BQBZBl_gXcrzmGec_", type: "Photo" },
+    { id: "11W2TAsWjEnJsUfxWlx0UnsvVrcP8AtsJ", type: "Memory" },
+    { id: "1hxp9C0-MMRPTelzyCK6Z_QTML7h5JCbp", type: "Memory" },
+    { id: "1VCRndU-fWuYWXqfJ4WyZfCBFjFYcM4hX", type: "Memory" },
+    { id: "1F6OJ861G3001_O8T8BFVEsd7AeracbuQ", type: "Memory" },
+    { id: "1LB78fGYt65g4My3UhPwL1Z-g072k7rAV", type: "Memory" },
+    { id: "1kqE69zFtl3i8mmJmx74EwzxfKkpa2Y7P", type: "Memory" },
+    { id: "1hN5kZDXjgksDruP2TiH0LM1aOPHZnkr5", type: "Memory" },
+    { id: "1uAPSdrtSKq1sqqRxljpMDZrab3XSv4C5", type: "Memory" },
+    { id: "1B2CV4jfO7KLCj99yvXC_yBLwv1rU50ZJ", type: "Memory" },
+    { id: "1ywsa1hDlb0qTxMOK_cdR0QHd0sRU7mjT", type: "Memory" },
+    { id: "1-005XDXz5Td3dJxzVfdHcWoJPPLetrsH", type: "Memory" },
+    { id: "1pAewrgLg6kXcr1k9xGmvE4fdbUGKJ1AC", type: "Memory" },
+    { id: "1dZQotaQjLlfEenpcT_WPrHXZ9Mhj7H65", type: "Memory" },
+    { id: "1uzyoGRJfqb8y8UcuQrMORI9fs6yXISoD", type: "Memory" },
+    { id: "12A-DxmKDUeySL45ajvtBzFWhX1uQrP53", type: "Memory" },
+    { id: "1EDh4NL9KsUxbOa8Qcs1w1jnluIFYj6VN", type: "Memory" },
+    { id: "1Mudmbidx-S4_HEYI5cq0lKcJqpB9pCGi", type: "Memory" },
+    { id: "1jkZ2F8odXtv8qR0ZCq-Onp4ne4sXHvbB", type: "Memory" },
+    { id: "16wpvWZ4pT2r8OHQMVHlkqcnoX59ARvJ3", type: "Memory" },
+    { id: "1bhGzpuMT_sTrY0vc5IzoCz8exf18zhFp", type: "Memory" },
+    { id: "1rIsBFeuwExjQMgZwlSp0wgBXGuwp_wqh", type: "Memory" },
+    { id: "1wQl-Phr-K4bOV0RmURPa9eK-6u1wxWmc", type: "Memory" },
+    { id: "1jyN3ZMy86lrk5ATv_yT_mg5NeWGCoQvE", type: "Memory" },
+    { id: "11xqlmP2fUDtIrrpBd7LympMEsauelBBC", type: "Memory" },
+    { id: "1Q-b1FGaG3-SBQ8lZU4p4Fc2H4GiYIEov", type: "Memory" },
+    { id: "1QzYvh_7OajdsI62LIgLXHq1X-rUjpJ4h", type: "Memory" },
+    { id: "1eP8a0u7Hy519VapDW_wJ0zfWIo3klZoA", type: "Memory" },
+    { id: "1hIkSBkyimXvGSIPGTmlXyH5IoIKj1_t3", type: "Memory" },
+    { id: "1x_7FPOU8Z4dL_uRXIxoeO_eDlWchRIdz", type: "Memory" }
+];
+
+const gallery = document.getElementById("gallery");
+
+memories.forEach((memory, index) => {
+
+    let icon = "♡";
+
+    if (memory.type === "Video") icon = "▶";
+    if (memory.type === "Photo") icon = "▧";
+
+    const card = document.createElement("a");
+
+    card.className = "memory-card";
+    card.href = `https://drive.google.com/file/d/${memory.id}/view`;
+    card.target = "_blank";
+    card.rel = "noopener noreferrer";
+
+    card.innerHTML = `
+        <div class="card-top">
+            <div class="card-number">
+                ${(index + 1).toString().padStart(2, "0")}
+            </div>
+            <div class="card-icon">${icon}</div>
+        </div>
+
+        <div class="card-bottom">
+            <div>
+                <div class="card-title">Memory ${index + 1}</div>
+                <div class="card-type">${memory.type}</div>
+            </div>
+            <span class="open-icon">↗</span>
+        </div>
+    `;
+
+    gallery.appendChild(card);
+});
+</script>
+
+</body>
+</html>

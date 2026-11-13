@@ -1,0 +1,498 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Two Years of Us | Our Story</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=DM+Sans:wght@300;400;500&family=Great+Vibes&display=swap" rel="stylesheet">
+
+<style>
+:root {
+    --bg: #100d10;
+    --text: #f4e9e5;
+    --muted: #b6a5a2;
+    --gold: #c9a477;
+    --rose: #bd858c;
+    --card: rgba(255,255,255,0.035);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    min-height: 100vh;
+    color: var(--text);
+    font-family: 'DM Sans', sans-serif;
+    background:
+        radial-gradient(ellipse at 15% 15%, rgba(126, 53, 77, 0.17), transparent 45%),
+        radial-gradient(ellipse at 85% 80%, rgba(91, 58, 91, 0.13), transparent 45%),
+        var(--bg);
+    overflow-x: hidden;
+}
+
+body::before {
+    content: "";
+    position: fixed;
+    inset: 0;
+    pointer-events: none;
+    opacity: 0.12;
+    z-index: 0;
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 180 180' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='.25'/%3E%3C/svg%3E");
+}
+
+nav {
+    width: 100%;
+    padding: 28px 8%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: relative;
+    z-index: 2;
+}
+
+nav a {
+    color: var(--muted);
+    text-decoration: none;
+    font-size: 12px;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    transition: color 0.3s;
+}
+
+nav a:hover {
+    color: var(--gold);
+}
+
+.chapter {
+    color: var(--gold);
+}
+
+.container {
+    width: min(850px, 88%);
+    margin: 65px auto 100px;
+    position: relative;
+    z-index: 1;
+}
+
+.hero {
+    text-align: center;
+    margin-bottom: 75px;
+}
+
+.butterfly {
+    font-size: 27px;
+    display: block;
+    margin-bottom: 24px;
+    animation: float 4s ease-in-out infinite;
+}
+
+.eyebrow {
+    color: var(--gold);
+    font-size: 11px;
+    letter-spacing: 4px;
+    text-transform: uppercase;
+    margin-bottom: 22px;
+}
+
+h1 {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: clamp(52px, 9vw, 88px);
+    font-weight: 400;
+    line-height: 0.95;
+}
+
+h1 span {
+    display: block;
+    color: var(--rose);
+    font-style: italic;
+}
+
+.rule {
+    width: 65px;
+    height: 1px;
+    background: var(--gold);
+    margin: 30px auto;
+}
+
+.intro {
+    max-width: 590px;
+    margin: auto;
+    color: var(--muted);
+    font-size: 15px;
+    line-height: 2;
+    font-weight: 300;
+}
+
+.timeline {
+    position: relative;
+    padding-left: 30px;
+}
+
+.timeline::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 8px;
+    bottom: 8px;
+    width: 1px;
+    background: linear-gradient(
+        to bottom,
+        transparent,
+        var(--gold),
+        rgba(201,164,119,0.15),
+        transparent
+    );
+}
+
+.card {
+    position: relative;
+    margin-bottom: 28px;
+    padding: 32px;
+    background: var(--card);
+    border: 1px solid rgba(201,164,119,0.13);
+    border-radius: 5px;
+    backdrop-filter: blur(8px);
+    transition: transform 0.3s, border-color 0.3s;
+}
+
+.card:hover {
+    transform: translateY(-4px);
+    border-color: rgba(201,164,119,0.4);
+}
+
+.card::before {
+    content: "";
+    position: absolute;
+    left: -36px;
+    top: 39px;
+    width: 11px;
+    height: 11px;
+    border-radius: 50%;
+    background: var(--gold);
+    box-shadow: 0 0 15px rgba(201,164,119,0.5);
+}
+
+.date {
+    color: var(--gold);
+    font-size: 10px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    margin-bottom: 15px;
+}
+
+.card h2 {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 31px;
+    font-weight: 500;
+    margin-bottom: 15px;
+}
+
+.card p {
+    color: var(--muted);
+    font-size: 14px;
+    line-height: 2;
+    font-weight: 300;
+}
+
+.highlight {
+    color: var(--rose);
+    font-style: italic;
+}
+
+.quote {
+    text-align: center;
+    margin: 75px auto;
+    padding: 0 15px;
+}
+
+.quote p {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: clamp(25px, 4vw, 35px);
+    line-height: 1.5;
+    font-style: italic;
+    color: var(--text);
+}
+
+.quote span {
+    display: block;
+    margin-top: 20px;
+    color: var(--gold);
+    font-size: 23px;
+}
+
+.navigation {
+    text-align: center;
+    margin-top: 70px;
+}
+
+.next-btn {
+    display: inline-block;
+    padding: 15px 30px;
+    border: 1px solid var(--gold);
+    color: var(--gold);
+    text-decoration: none;
+    font-size: 11px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    transition: all 0.3s;
+}
+
+.next-btn:hover {
+    background: var(--gold);
+    color: var(--bg);
+}
+
+footer {
+    text-align: center;
+    padding: 35px 15px;
+    color: rgba(182,165,162,0.55);
+    font-size: 11px;
+    letter-spacing: 1px;
+}
+
+@keyframes float {
+    0%, 100% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(-9px);
+    }
+}
+
+@media (max-width: 600px) {
+    nav {
+        padding: 22px 6%;
+    }
+
+    .container {
+        margin-top: 45px;
+    }
+
+    .card {
+        padding: 25px 22px;
+    }
+
+    .timeline {
+        padding-left: 23px;
+    }
+
+    .card::before {
+        left: -29px;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    *, *::before, *::after {
+        animation: none !important;
+        scroll-behavior: auto !important;
+        transition: none !important;
+    }
+}
+</style>
+</head>
+
+<body>
+
+<nav>
+    <a href="our-little-world.html">← Previous Chapter</a>
+    <span class="chapter">Chapter 04</span>
+</nav>
+
+<main class="container">
+
+    <section class="hero">
+
+        <span class="butterfly">🦋</span>
+
+        <div class="eyebrow">
+            A chapter filled with time, memories and lessons
+        </div>
+
+        <h1>
+            Two years
+            <span>of us...</span>
+        </h1>
+
+        <div class="rule"></div>
+
+        <p class="intro">
+            18 March 2022 se shuru hua woh safar, jisme humne
+            ek dusre ke saath bahut saare chhote-bade moments
+            share kiye. Kuch din bahut khoobsurat the, kuch
+            mushkil bhi. Lekin har din ne humari kahani mein
+            apni ek jagah banayi.
+        </p>
+
+    </section>
+
+
+    <section class="timeline">
+
+        <article class="card">
+
+            <div class="date">
+                18 March 2022 · A New Beginning
+            </div>
+
+            <h2>The day we became an "us".</h2>
+
+            <p>
+                Us din se humari life mein ek naya chapter shuru
+                hua. Ab sirf baatein nahi thi, balki ek dusre ke
+                liye time nikalna, chhoti-chhoti baatein share
+                karna aur bina kisi wajah ke ek dusre ko yaad
+                karna bhi humari routine ka hissa ban gaya tha.
+                <br><br>
+                Shayad us waqt hum dono ko andaza bhi nahi tha
+                ki aane wale waqt mein kitni saari yaadein
+                banne wali hain.
+            </p>
+
+        </article>
+
+
+        <article class="card">
+
+            <div class="date">
+                The Days We Shared
+            </div>
+
+            <h2>Ordinary days became special.</h2>
+
+            <p>
+                University ke din, hostel ki baatein, saath
+                breakfast karna, ek dusre ki plate se khana,
+                midnight cooking aur woh chhoti-chhoti nok-jhok...
+                <br><br>
+                Inmein se shayad kuch bhi duniya ke liye special
+                na ho, lekin mere liye ye moments bahut maayne
+                rakhte hain.
+                <br><br>
+                Aapke saath guzara hua normal sa din bhi kabhi-kabhi
+                kisi special occasion se zyada yaad reh jaata tha.
+            </p>
+
+        </article>
+
+
+        <article class="card">
+
+            <div class="date">
+                Somewhere Along The Way
+            </div>
+
+            <h2>We had our own little world.</h2>
+
+            <p>
+                Ek waqt aisa bhi tha jab humne ek hi jagah rehkar
+                apni daily life share ki. Saath rehna, khana banana,
+                ek dusre ka khayal rakhna aur chhoti-chhoti baaton
+                par hasna...
+                <br><br>
+                Aaj peeche mudkar dekhta hoon toh samajh aata hai
+                ki happiness hamesha kisi badi cheez mein nahi hoti.
+                Kabhi-kabhi woh bas kisi apne ke paas hone mein hoti hai.
+            </p>
+
+        </article>
+
+
+        <article class="card">
+
+            <div class="date">
+                What I Need To Acknowledge
+            </div>
+
+            <h2>I know I made mistakes.</h2>
+
+            <p>
+                Humari kahani mein sab kuch hamesha sahi nahi raha.
+                Mujhse galtiyan hui. Maine aapko woh time, attention
+                aur care nahi di jiski aap deserve karti thi.
+                <br><br>
+                Maine kuch aise decisions liye jinka asar aap par
+                pada, aur aapko baar-baar hurt kiya. Aapne mujhe
+                chances bhi diye, lekin main unki value us waqt
+                theek se samajh nahi paaya.
+                <br><br>
+                Main apni galtiyon ko kisi reason ke peeche chhupana
+                nahi chahta. Jo hua, uski responsibility meri hai.
+                <br><br>
+                <span class="highlight">
+                    Kaash main us waqt samajh paata ki kisi ko
+                    pyaar karna sirf kehna nahi, balki har din
+                    apne actions se dikhana bhi hota hai.
+                </span>
+            </p>
+
+        </article>
+
+
+        <article class="card">
+
+            <div class="date">
+                What These Years Taught Me
+            </div>
+
+            <h2>Some lessons stay with you.</h2>
+
+            <p>
+                In do saalon ne mujhe bahut kuch sikhaya.
+                Kisi ke saath hona aur kisi ke liye present rehna,
+                dono alag cheezein hain.
+                <br><br>
+                Kisi ki feelings ko samajhna, unki baat sunna,
+                unhe importance dena aur apni galti accept karna
+                bhi utna hi zaroori hai jitna pyaar jatana.
+                <br><br>
+                Main ye sab pehle samajh paata, toh shayad
+                kuch cheezein alag hoti.
+            </p>
+
+        </article>
+
+    </section>
+
+
+    <section class="quote">
+
+        <p>
+            "Har kahani ka har hissa perfect nahi hota.
+            Lekin kuch kahaniyan humein woh sikha jaati hain
+            jo shayad hum kabhi bhool nahi paate."
+        </p>
+
+        <span>♡</span>
+
+    </section>
+
+
+    <div class="navigation">
+
+        <a href="our-memories.html" class="next-btn">
+            Explore Our Memories →
+        </a>
+
+    </div>
+
+</main>
+
+
+<footer>
+    Made with love, for Jaana ♡
+</footer>
+
+</body>
+</html>

@@ -1,0 +1,550 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>The Beginning | Our Story</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=DM+Sans:wght@300;400;500&family=Great+Vibes&display=swap" rel="stylesheet">
+
+<style>
+
+:root {
+    --bg: #100d10;
+    --text: #f4e9e5;
+    --muted: #b6a5a2;
+    --gold: #c9a477;
+    --rose: #bd858c;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    min-height: 100vh;
+    background:
+        radial-gradient(ellipse at 50% 0%, #382027 0%, transparent 55%),
+        linear-gradient(180deg, #100d10, #171015 55%, #100d10);
+
+    color: var(--text);
+    font-family: 'DM Sans', sans-serif;
+    overflow-x: hidden;
+}
+
+body::before {
+    content: "";
+    position: fixed;
+    inset: 0;
+    pointer-events: none;
+    opacity: 0.12;
+
+    background-image:
+        url("data:image/svg+xml,%3Csvg viewBox='0 0 180 180' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='.3'/%3E%3C/svg%3E");
+
+    z-index: 10;
+}
+
+/* Navigation */
+
+nav {
+    width: 100%;
+    padding: 28px 7%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.back-link {
+    color: var(--muted);
+    text-decoration: none;
+    font-size: 12px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    transition: 0.3s;
+}
+
+.back-link:hover {
+    color: var(--gold);
+}
+
+.page-label {
+    color: var(--gold);
+    font-size: 11px;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+}
+
+/* Main section */
+
+.container {
+    width: min(850px, 88%);
+    margin: auto;
+    padding: 90px 0 100px;
+    text-align: center;
+}
+
+.eyebrow {
+    color: var(--gold);
+    font-size: 11px;
+    letter-spacing: 4px;
+    text-transform: uppercase;
+    margin-bottom: 25px;
+}
+
+.butterfly {
+    display: block;
+    font-size: 25px;
+    margin-bottom: 30px;
+    animation: float 4s ease-in-out infinite;
+}
+
+@keyframes float {
+    0%, 100% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(-9px);
+    }
+}
+
+h1 {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: clamp(45px, 8vw, 76px);
+    font-weight: 400;
+    line-height: 1.1;
+    margin-bottom: 12px;
+}
+
+h1 span {
+    display: block;
+    color: var(--rose);
+    font-family: 'Great Vibes', cursive;
+    font-size: clamp(55px, 10vw, 92px);
+    margin-top: 5px;
+}
+
+.rule {
+    width: 65px;
+    height: 1px;
+    background: var(--gold);
+    margin: 35px auto;
+}
+
+.intro {
+    max-width: 610px;
+    margin: auto;
+    color: var(--muted);
+    font-size: 15px;
+    line-height: 2.1;
+    font-weight: 300;
+}
+
+/* Story cards */
+
+.story-card {
+    margin: 85px auto 0;
+    padding: 42px 45px;
+    max-width: 680px;
+
+    background: linear-gradient(
+        135deg,
+        rgba(255,255,255,0.035),
+        rgba(255,255,255,0.008)
+    );
+
+    border: 1px solid rgba(201,164,119,0.19);
+    border-radius: 3px;
+    text-align: left;
+    position: relative;
+}
+
+.story-card::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 2px;
+    height: 100%;
+    background: linear-gradient(
+        transparent,
+        var(--gold),
+        transparent
+    );
+}
+
+.date {
+    color: var(--gold);
+    font-size: 10px;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    margin-bottom: 20px;
+}
+
+.story-card h2 {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 34px;
+    font-weight: 500;
+    margin-bottom: 20px;
+}
+
+.story-card p {
+    color: var(--muted);
+    font-size: 14px;
+    line-height: 2.1;
+    font-weight: 300;
+    margin-bottom: 15px;
+}
+
+.story-card p:last-child {
+    margin-bottom: 0;
+}
+
+/* Special conversation */
+
+.conversation {
+    margin: 30px 0;
+    padding: 25px 28px;
+    border-left: 1px solid var(--rose);
+    background: rgba(189,133,140,0.055);
+}
+
+.conversation p {
+    color: #e5c9c5;
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 21px;
+    line-height: 1.7;
+    font-style: italic;
+    margin-bottom: 13px;
+}
+
+.conversation p:last-child {
+    margin-bottom: 0;
+}
+
+.reply {
+    color: var(--rose) !important;
+    font-size: 27px !important;
+}
+
+/* Highlight */
+
+.highlight {
+    color: var(--rose);
+    font-style: italic;
+}
+
+/* Closing quote */
+
+.quote {
+    margin: 90px auto 0;
+    max-width: 600px;
+    font-family: 'Cormorant Garamond', serif;
+    font-size: clamp(25px, 4vw, 36px);
+    line-height: 1.5;
+    color: #e5c9c5;
+    font-style: italic;
+}
+
+.quote span {
+    display: block;
+    margin-top: 18px;
+    font-family: 'DM Sans', sans-serif;
+    font-size: 10px;
+    letter-spacing: 3px;
+    color: var(--gold);
+    font-style: normal;
+    text-transform: uppercase;
+}
+
+/* Navigation button */
+
+.next-section {
+    margin-top: 75px;
+}
+
+.next-link {
+    display: inline-block;
+    padding: 16px 30px;
+    border: 1px solid rgba(201,164,119,0.5);
+    color: var(--gold);
+    text-decoration: none;
+    font-size: 11px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    transition: 0.35s;
+}
+
+.next-link:hover {
+    background: var(--gold);
+    color: #171015;
+    transform: translateY(-3px);
+}
+
+footer {
+    text-align: center;
+    padding: 30px 15px 35px;
+    color: #806d70;
+    font-size: 11px;
+    letter-spacing: 1.5px;
+}
+
+/* Responsive */
+
+@media(max-width: 600px) {
+
+    nav {
+        padding: 22px 6%;
+    }
+
+    .container {
+        padding-top: 65px;
+    }
+
+    .story-card {
+        padding: 30px 25px;
+        margin-top: 65px;
+    }
+
+    .story-card h2 {
+        font-size: 29px;
+    }
+
+    .story-card p {
+        font-size: 13px;
+    }
+
+    .intro {
+        font-size: 14px;
+    }
+
+    .conversation {
+        padding: 20px;
+    }
+
+    .conversation p {
+        font-size: 19px;
+    }
+}
+
+@media(prefers-reduced-motion: reduce) {
+    *,
+    *::before,
+    *::after {
+        animation: none !important;
+        scroll-behavior: auto !important;
+        transition: none !important;
+    }
+}
+
+</style>
+</head>
+
+<body>
+
+<nav>
+
+    <a href="our-story.html" class="back-link">
+        ← Previous chapter
+    </a>
+
+    <div class="page-label">
+        Chapter 02
+    </div>
+
+</nav>
+
+
+<main class="container">
+
+    <div class="eyebrow">
+        The moment everything changed
+    </div>
+
+    <span class="butterfly">🦋</span>
+
+    <h1>
+        And then
+        <span>it happened...</span>
+    </h1>
+
+    <div class="rule"></div>
+
+    <p class="intro">
+        Kabhi-kabhi ek conversation zindagi ka sabse
+        khoobsurat mod ban jaati hai.
+
+        Aur humari kahani mein bhi ek aisi hi conversation hui thi.
+
+        Shayad aapko yaad ho...
+    </p>
+
+
+    <!-- First Card -->
+
+    <section class="story-card">
+
+        <div class="date">
+            15 or 16 March · 2022
+        </div>
+
+        <h2>
+            "Yrr mujhse ek galti ho gyi hai..."
+        </h2>
+
+        <p>
+            Yaad hai aapne merko ek din call kiya tha
+            aur kaha tha ki aapse ek galti ho gayi hai?
+        </p>
+
+        <p>
+            Maine pucha tha, kya galti ho gayi?
+            Aur fir aapne jo kaha, uske baad conversation
+            kuch aisi hui thi...
+        </p>
+
+        <div class="conversation">
+
+            <p>
+                "Mujhe ek ladke se pyar ho gya hai but
+                ptanhi usko merse hai ya ni mai use bol du
+                to wo kya react krega kya ni"
+            </p>
+
+        </div>
+
+        <p>
+            Maine aapse kaha tha ki naam batao,
+            fir sochenge ki usse kaise batana hai.
+        </p>
+
+        <p>
+            Lekin mujhe kahan pta tha ki aapka agla jawab
+            meri zindagi ki sabse special baaton mein
+            se ek ban jayega.
+        </p>
+
+    </section>
+
+
+    <!-- Second Card -->
+
+    <section class="story-card">
+
+        <div class="date">
+            Just Three Words
+        </div>
+
+        <h2>
+            And your answer was...
+        </h2>
+
+        <div class="conversation">
+
+            <p class="reply">
+                "Apse."
+            </p>
+
+        </div>
+
+        <p>
+            Bas ek chhota sa jawab tha, lekin mere liye
+            us waqt duniya ki sabse badi baat ban gaya tha.
+        </p>
+
+        <p>
+            Shayad us moment mein mere paas kehne ke liye
+            bahut kuch tha, lekin kuch feelings aisi hoti hain
+            jinhe words mein explain karna mushkil hota hai.
+        </p>
+
+        <p>
+            Aaj bhi jab us conversation ke baare mein sochta hoon,
+            toh woh moment bilkul waise hi yaad aata hai.
+        </p>
+
+    </section>
+
+
+    <!-- Third Card -->
+
+    <section class="story-card">
+
+        <div class="date">
+            18 March · 2022
+        </div>
+
+        <h2>
+            The day I said yes.
+        </h2>
+
+        <p>
+            Aur fir aaya 18 March 2022 ka din,
+            jab maine aapke proposal ko accept kiya tha.
+        </p>
+
+        <p>
+            Us din se humari kahani ek naye chapter mein
+            enter kar gayi thi.
+        </p>
+
+        <p>
+            Aur proposal ke baad jab hum pehli baar mile,
+            toh sixth floor ki stairs par aapne mujhe
+            pehli baar hug kiya tha.
+        </p>
+
+        <p>
+            Pta nahi aapko woh moment kitna yaad hai,
+            lekin mujhe lagta hai ki hum dono us hug ko
+            kabhi nahi bhool payenge.
+        </p>
+
+        <p>
+            Woh sirf ek hug nahi tha.
+            Mere liye woh humari kahani ka ek aisa moment tha
+            jo hamesha mere saath rahega.
+        </p>
+
+    </section>
+
+
+    <div class="quote">
+
+        "Kuch moments waqt ke saath purane nahi hote,
+        bas yaadon mein aur gehre hote jaate hain."
+
+        <span>— 18 March 2022</span>
+
+    </div>
+
+
+    <div class="next-section">
+
+        <a href="our-little-world.html" class="next-link">
+            Continue our story →
+        </a>
+
+    </div>
+
+</main>
+
+
+<footer>
+    Made with love, for Jaana ♡
+</footer>
+
+
+</body>
+</html>
